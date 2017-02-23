@@ -37,7 +37,7 @@ void event_loop(TArtEventStore *estore, TTree *tree){
 		raw.clear_variables();
 		if(Nevent==1)
 		    unpack_dipoles(rawevent);
-		unpack(rawevent);		
+		unpack(rawevent);
 
 		tree->Fill();
 		neve++;
@@ -113,7 +113,6 @@ void unpack_dipoles(TArtRawEventObject *rawevent){
 
 
 void unpack(TArtRawEventObject *rawevent){
-	
 	int numseg = rawevent->GetNumSeg();/* number of segment*/
 	for(int i=0; i<numseg; i++){
 		TArtRawSegmentObject *seg = rawevent->GetSegment(i);
@@ -131,7 +130,6 @@ void unpack(TArtRawEventObject *rawevent){
 	  if(mod == P7166){  /* Mask for Phillips */
 	    buf = buf & 0x0fff;
 	  }
-
 	  switch(fpl){
 	  case F2:
 	    break;
@@ -389,10 +387,8 @@ void unpack(TArtRawEventObject *rawevent){
 	      switch (fpl){
 	      case F3://F3VME for F3IC and F5IC
 		if(ch<6){
-		  //ICRaw[3][ch] = buf;
 		  raw.IC3Raw[ch] = buf;
-		}else if(15<ch){
-		  //ICRaw[5][ch-16] = buf;
+		}else if(15<ch && ch<21){
 		  raw.IC5Raw[ch-16] = buf;
 		}else if(ch==6){
 		  raw.IC_GasRaw[3] = buf;
@@ -401,7 +397,6 @@ void unpack(TArtRawEventObject *rawevent){
 		}
 		break;
 	      case F7:
-		//ICRaw[fpl][ch] = buf;
 		raw.IC7Raw[ch] = buf;
 		break;
 	      case F11VME://GSI IC
@@ -464,6 +459,7 @@ void unpack(TArtRawEventObject *rawevent){
 
 
 	}//segment loop
+	
 }
 
 #endif

@@ -319,6 +319,7 @@ void rawdata::set_branch_addresses(TTree *tree2){
   tree2->SetBranchAddress("IC_GasRaw",IC_GasRaw);
   tree2->SetBranchAddress("GSIICERaw",GSIICERaw);
   tree2->SetBranchAddress("GSI1290Raw",GSI1290Raw);
+  tree2->SetBranchAddress("GSIMHit",GSIMHit);
   
   tree2->SetBranchAddress("TSRaw_C1",&TSRaw_C1);    
   tree2->SetBranchAddress("TSRaw_C8",&TSRaw_C8);    

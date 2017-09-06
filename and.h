@@ -285,51 +285,63 @@ void unpack(TArtRawEventObject *rawevent){
 		  raw.tV1290 = buf;
 		  break;
 		case 16:
-		  raw.PL3_MTRaw[0][raw.PL3_MHit[0]] = buf;
-		  raw.PL3_MHit[0]++;		
+		  if(raw.PL3_MHit[0]<10)
+		    raw.PL3_MTRaw[0][raw.PL3_MHit[0]] = buf;
+		  raw.PL3_MHit[0]++;
 		  break;
 		case 17:
-		  raw.PL3_MTRaw[1][raw.PL3_MHit[1]] = buf;
+		  if(raw.PL3_MHit[1]<10)
+		    raw.PL3_MTRaw[1][raw.PL3_MHit[1]] = buf;
 		  raw.PL3_MHit[1]++;		
 		  break;
 		case 18:
-		  raw.PL5_MTRaw[0][raw.PL5_MHit[0]] = buf;
+		  if(raw.PL5_MHit[0]<10)
+		    raw.PL5_MTRaw[0][raw.PL5_MHit[0]] = buf;
 		  raw.PL5_MHit[0]++;		
 		  break;
 		case 19:
-		  raw.PL5_MTRaw[1][raw.PL5_MHit[1]] = buf;
+		  if(raw.PL5_MHit[1]<10)
+		    raw.PL5_MTRaw[1][raw.PL5_MHit[1]] = buf;
 		  raw.PL5_MHit[1]++;		
 		  break;
 		case 20:
-		  raw.PL7_MTRaw[0][raw.PL7_MHit[0]] = buf;
+		  if(raw.PL7_MHit[0]<10)
+		    raw.PL7_MTRaw[0][raw.PL7_MHit[0]] = buf;
 		  raw.PL7_MHit[0]++;		
 		  break;
 		case 21:
-		  raw.PL7_MTRaw[1][raw.PL7_MHit[1]] = buf;
+		  if(raw.PL7_MHit[1]<10)
+		    raw.PL7_MTRaw[1][raw.PL7_MHit[1]] = buf;
 		  raw.PL7_MHit[1]++;		
 		  break;
 		case 22:// F11PL ULT
-		  raw.PL11_MTRaw[0][raw.PL11_MHit[0]] = buf;
+		  if(raw.PL11_MHit[0]<10)
+		    raw.PL11_MTRaw[0][raw.PL11_MHit[0]] = buf;
 		  raw.PL11_MHit[0]++;	
 		  break;
 		case 23:// F11PL URT
-		  raw.PL11_MTRaw[1][raw.PL11_MHit[1]] = buf;
+		  if(raw.PL11_MHit[1]<10)
+		    raw.PL11_MTRaw[1][raw.PL11_MHit[1]] = buf;
 		  raw.PL11_MHit[1]++;		
 		  break;
 		case 24:// PL11long-LT
-		  raw.PL11long_MTRaw[0][raw.PL11long_MHit[0]] = buf;
+		  if(raw.PL11long_MHit[0]<10)
+		    raw.PL11long_MTRaw[0][raw.PL11long_MHit[0]] = buf;
 		  raw.PL11long_MHit[0]++;		
 		  break;
 		case 25:// PL11long-RT
-		  raw.PL11long_MTRaw[1][raw.PL11long_MHit[1]] = buf;
+		  if(raw.PL11long_MHit[1]<10)
+		    raw.PL11long_MTRaw[1][raw.PL11long_MHit[1]] = buf;
 		  raw.PL11long_MHit[1]++;		
 		  break;
 		case 26:// F11PL DLT
-		  raw.PL11_MTRaw[2][raw.PL11_MHit[2]] = buf;
+		  if(raw.PL11_MHit[2]<10)
+		    raw.PL11_MTRaw[2][raw.PL11_MHit[2]] = buf;
 		  raw.PL11_MHit[2]++;		
 		  break;
 		case 27:// F11PL DRT
-		  raw.PL11_MTRaw[3][raw.PL11_MHit[3]] = buf;
+		  if(raw.PL11_MHit[3]<10)  
+		    raw.PL11_MTRaw[3][raw.PL11_MHit[3]] = buf;
 		  raw.PL11_MHit[3]++;		
 		  break;
 		}
